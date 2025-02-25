@@ -1,11 +1,3 @@
-/**
- * Template Name: Vesperr
- * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
- * Updated: Aug 07 2024 with Bootstrap v5.3.3
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-
 (function () {
     "use strict";
 
@@ -127,80 +119,6 @@
     new PureCounter();
 
     /**
-     * Init swiper sliders
-     */
-    function initSwiper() {
-        document
-            .querySelectorAll(".init-swiper")
-            .forEach(function (swiperElement) {
-                let config = JSON.parse(
-                    swiperElement
-                        .querySelector(".swiper-config")
-                        .innerHTML.trim()
-                );
-
-                if (swiperElement.classList.contains("swiper-tab")) {
-                    initSwiperWithCustomPagination(swiperElement, config);
-                } else {
-                    new Swiper(swiperElement, config);
-                }
-            });
-    }
-
-    window.addEventListener("load", initSwiper);
-
-    /**
-     * Init isotope layout and filters
-     */
-    document
-        .querySelectorAll(".isotope-layout")
-        .forEach(function (isotopeItem) {
-            let layout = isotopeItem.getAttribute("data-layout") ?? "masonry";
-            let filter = isotopeItem.getAttribute("data-default-filter") ?? "*";
-            let sort =
-                isotopeItem.getAttribute("data-sort") ?? "original-order";
-
-            let initIsotope;
-            imagesLoaded(
-                isotopeItem.querySelector(".isotope-container"),
-                function () {
-                    initIsotope = new Isotope(
-                        isotopeItem.querySelector(".isotope-container"),
-                        {
-                            itemSelector: ".isotope-item",
-                            layoutMode: layout,
-                            filter: filter,
-                            sortBy: sort,
-                        }
-                    );
-                }
-            );
-
-            isotopeItem
-                .querySelectorAll(".isotope-filters li")
-                .forEach(function (filters) {
-                    filters.addEventListener(
-                        "click",
-                        function () {
-                            isotopeItem
-                                .querySelector(
-                                    ".isotope-filters .filter-active"
-                                )
-                                .classList.remove("filter-active");
-                            this.classList.add("filter-active");
-                            initIsotope.arrange({
-                                filter: this.getAttribute("data-filter"),
-                            });
-                            if (typeof aosInit === "function") {
-                                aosInit();
-                            }
-                        },
-                        false
-                    );
-                });
-        });
-
-    /**
      * Correct scrolling position upon page load for URLs containing hash links.
      */
     window.addEventListener("load", function (e) {
@@ -246,31 +164,3 @@
     window.addEventListener("load", navmenuScrollspy);
     document.addEventListener("scroll", navmenuScrollspy);
 })();
-
-// Add this JavaScript to load YouTube videos only when the modal is opened
-document.addEventListener("DOMContentLoaded", function () {
-    // Get all modals
-    const modals = document.querySelectorAll(".modal");
-
-    // For each modal
-    modals.forEach((modal) => {
-        // Find the iframe inside this modal
-        const iframe = modal.querySelector("iframe");
-
-        // Store the original src
-        const src = iframe.src;
-
-        // Clear the src initially
-        iframe.src = "";
-
-        // When modal is shown, set the src
-        modal.addEventListener("shown.bs.modal", function () {
-            iframe.src = src;
-        });
-
-        // When modal is hidden, clear the src
-        modal.addEventListener("hidden.bs.modal", function () {
-            iframe.src = "";
-        });
-    });
-});
