@@ -26,9 +26,10 @@
 
         <!-- Vendor CSS Files -->
         <link
-            href="assets/vendor/bootstrap/css/bootstrap.min.css"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
         />
+
         <link
             href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
             rel="stylesheet"
@@ -86,7 +87,9 @@
                         <div
                             class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-start"
                         >
-                            <h2 class="fw-semibold">Hi! I'm Hibrizi</h2>
+                            <h2 class="fw-semibold pt-2 pt-md-0">
+                                Hi! I'm Hibrizi
+                            </h2>
                             <h1>
                                 <span>A </span><span id="typed-text"></span>
                             </h1>
@@ -106,13 +109,14 @@
                         </div>
                         <div class="col-lg-5 order-1 order-lg-2 hero-img">
                             <img
-                                src="assets/img/hero-img.png"
+                                src="assets/img/hero.png"
                                 width="600"
                                 height="400"
                                 class="img-fluid animated"
                                 alt="Hero image"
                                 loading="eager"
                                 fetchpriority="high"
+                                style="margin-top: -80px"
                             />
                         </div>
                     </div>
@@ -129,7 +133,7 @@
                     data-aos-delay="100"
                 >
                     <h2>About Me</h2>
-                    <p class="fs-4">
+                    <p class="responsive-text">
                         Fullstack developer specializing in Laravel and
                         WordPress development, transforming business
                         requirements into fully-functional web applications.
@@ -216,7 +220,7 @@
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
                     <h2>Services</h2>
-                    <p class="fs-4">
+                    <p class="responsive-text">
                         Providing comprehensive web solutions with expertise in
                         multiple development areas.
                     </p>
@@ -316,7 +320,7 @@
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
                     <h2>Skills</h2>
-                    <p class="fs-4">
+                    <p class="responsive-text">
                         Technologies and frameworks I work with to build robust
                         web applications.
                     </p>
@@ -504,7 +508,7 @@
                         data-aos-delay="100"
                     >
                         <h2 class="fw-bold mb-3">Recent Projects</h2>
-                        <p class="fs-4">
+                        <p class="responsive-text">
                             A collection of my latest work, showcasing my
                             expertise in building functional and visually
                             appealing web applications.
@@ -743,9 +747,8 @@
                                     <div
                                         class="col-md-7 d-flex align-items-stretch"
                                     >
-                                        <div class="w-100 pt-3">
+                                        <div class="w-100 pt-4">
                                             <div
-                                                class="video-container"
                                                 style="
                                                     position: relative;
                                                     padding-bottom: 53.5%;
@@ -756,7 +759,7 @@
                                             >
                                                 <!-- YouTube thumbnail sebagai placeholder -->
                                                 <div
-                                                    id="video-placeholder"
+                                                    id="video-placeholder-1"
                                                     style="
                                                         position: absolute;
                                                         top: 0;
@@ -810,9 +813,9 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- Iframe akan diisi dengan JavaScript ketika thumbnail diklik -->
+                                                <!-- Container untuk iframe YouTube -->
                                                 <div
-                                                    id="youtube-player-container"
+                                                    id="youtube-player-container-1"
                                                 ></div>
                                             </div>
                                         </div>
@@ -1235,7 +1238,7 @@
                                                         left: 0;
                                                         width: 100%;
                                                         height: 100%;
-                                                        background-image: url('https://i.ytimg.com/vi/aIZzaeI3xUc/hqdefault.jpg');
+                                                        background-image: url('https://i.ytimg.com/vi/Uc0a4gz9tQY/hqdefault.jpg');
                                                         background-size: cover;
                                                         background-position: center;
                                                         cursor: pointer;
@@ -1672,7 +1675,7 @@
 
                             // Buat iframe YouTube
                             const iframe = document.createElement("iframe");
-                            iframe.src = `https://www.youtube.com/embed/${data.videoId}?autoplay=1`;
+                            iframe.src = `https://www.youtube.com/embed/${data.videoId}?autoplay=1&loop=1&playlist=${data.videoId}`;
                             iframe.title = "YouTube video player";
                             iframe.style.position = "absolute";
                             iframe.style.top = "0";
@@ -1693,12 +1696,15 @@
                 });
             });
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Vendor JS Files -->
         <script
-            src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
             defer
         ></script>
+        <!-- Vendor JS Files -->
+        <!-- <script
+            src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+            defer
+        ></script> -->
         <script src="assets/vendor/php-email-form/validate.js" defer></script>
         <script src="assets/vendor/aos/aos.js" defer></script>
         <script

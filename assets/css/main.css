@@ -90,6 +90,10 @@ h6 {
     font-family: var(--heading-font);
 }
 
+.responsive-text {
+    font-size: calc(1rem + 0.5vw);
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -951,6 +955,7 @@ section,
 
 .hero .animated {
     animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    /* margin-top: -80px; */
 }
 
 @media (max-width: 640px) {
@@ -1689,6 +1694,17 @@ section,
     .pricing .box {
         max-width: 80%;
         margin: 0 auto 30px auto;
+    }
+    .section-title h2.fw-bold.mb-3 {
+        font-size: 1.7rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.85rem;
+    }
+
+    .about .content h3 {
+        font-size: 1.5rem;
     }
 }
 
